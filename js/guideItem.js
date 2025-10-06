@@ -177,13 +177,13 @@ export default class GuideItem {
         cDateError.textContent = '';
         const statusError = document.getElementById('statusError');
         statusError.textContent = '';
-        tdGuideNr.forEach(cell => {
+        tdGuideNr.forEach(cell => {console.log(guideItems.status);
             if (cell.textContent === guideItems.guideNr) {
                 guideError.textContent = 'Guide is already inserted.';
                 guideNrElem.classList.add('invalid');
                 errorFound = true;
             }
-            else if (guideNr === '') {
+            else if (guideItems.guideNr === '') {
                 guideError.textContent = 'The field can\'t be empty.';
                 guideNrElem.classList.add('invalid');
                 errorFound = true;
@@ -210,7 +210,7 @@ export default class GuideItem {
             cDateElem.classList.add('invalid');
             errorFound = true;
         };
-        if (guideItems.status === '') {
+        if (guideItems.status === '' || guideItems.status === '0') {
             statusError.textContent = 'The field can\'t be empty.';
             statusElem.classList.add('invalid');
             errorFound = true;
