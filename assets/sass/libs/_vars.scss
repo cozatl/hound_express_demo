@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900;1000;1200&family=Montserrat:ital@0;1&display=swap");
+
+// Font.
+/*
+	Variable defined as map, to set various configurations regarding the same item.
+*/
+	$font: (
+		family:					('Montserrat', Helvetica, sans-serif),
+		family-fixed:			('Montserrat','Courier New', monospace),
+		family-heading:			('Montserrat', Helvetica, sans-serif),
+		family-btn:				('Orbitron','Montserrat', Helvetica, sans-serif),
+		weight:					300,
+		weight-bold:			600,
+		weight-extrabold:		700,
+		weight-heading:			800,
+		weight-heading-light:	600,
+		kerning:				0.0375em,
+		kerning-heading:		0.175em,
+		kerning-heading-alt:	-0.05em
+	);
+
+	$colors: (
+		black-color:            #000,
+		white-color:            #fff,
+		btn-hover:              rgb(235, 211, 211),
+		btn-play-hover:         rgb(111, 231, 111),
+		header-color:           rgb(235, 211, 211),
+		avatar-color:           rgb(255, 165, 0),
+		avatar-shadow:          rgb(53, 47, 47),
+		btn-color:              rgb(53, 47, 47),
+		btnDisabled-color:      rgb(68, 68, 68),
+		bgBtnDisabled-color:    rgb(128, 104, 104),
+		bgBody-color:           rgb(27, 27, 27),
+		bgMainDiv-color:        linear-gradient(rgba(61, 69, 85, 0.938), rgba(31, 30, 44, 0.938),rgba(78, 72, 139, 0.938)),
+		bgHeader-color:         linear-gradient(rgba(9, 30, 63, 1), rgba(31, 30, 44, 0.938)),rgba(21, 20, 31, 0.938)
+		bgList-color:           linear-gradient(to bottom, rgb(32, 50, 109), 20%, rgb(33, 32, 39)),
+		bgTable-color:          linear-gradient(to left top,#052029,#91c2d3)
+	);
+
+	$gap:                       5px;
+
+	$grid-alignment: (
+		align-center:          center,
+		align-between:         space-between,
+		align-around:          space-around,
+		align-evenly:          space-evenly,
+		align-stretch:          stretch,
+		justify-center:        center,
+		justify-start:         start,
+		justify-end:           end,
+		justify-between:       space-between,
+		justify-around:        space-around,
+		justify-evenly:        space-evenly,
+		items-center:          center,
+		items-start:           start,
+		items-end:             end,
+		items-stretch:         stretch  
+	)

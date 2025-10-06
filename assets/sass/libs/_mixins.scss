@@ -1,0 +1,84 @@
+@forward './vars'; //Use variables when mixins module is called.
+@use 'sass:map';   //Use maps from variable module.
+@use './vars';     //Use variables internally in this module
+/// Makes an element's :before pseudoelement a FontAwesome icon.
+/// @param {string} $weight Set font weight.
+/// @param {string} $minSize Set min font size.
+/// @param {string} $prefValue Set preferred font size.
+/// @param {string} $prefValue Set max font size.
+@mixin fonts($weight,$minSize, $prefValue, $maxSize) {
+    font-size: clamp($minSize, $prefValue, $maxSize);
+    font-weight: $weight;
+}
+
+/// Set box-sizing layout
+@mixin boxSizing {
+    box-sizing: border-box;
+}
+
+/// Set flexbox layout.
+@mixin flexbox {
+    display: flex;
+    justify-content: space-between;
+}
+
+/// Set grid layout.
+/// @param {string} $alignment Set item alignment.
+@mixin grid($alignment : center) {
+    display: grid;
+    align-items: $alignment;
+}
+
+/// Set box shadow. Default values set to 0.
+/// @param {int} $xOffset Positive places shadow to the right, Negative to the left. X and Y 0, shadow is behind the element.
+/// @param {int} $yOffset Positive places shadow below the element, Negative above the element.
+/// @param {int} $blurRadius Fades the shadow, the larger this value, the bigger the blur, it becomes bigger and lighter.
+/// @param {int} $spreadRadius Makes the shadow bigger (positive values) or smaller (negative values).
+@mixin boxShadow($xOffset: 0, $yOffset: 0, $blurRadius: 0, $spreadRadius: 0, $color: #000) {
+    box-shadow: $xOffset $yOffset $blurRadius $spreadRadius $color;
+}
+
+@mixin breakpoint1 { //1104px
+    @media screen and (max-width: 69rem) {
+        @content
+    };
+}
+
+@mixin breakpoint2 { //1103.2px
+    @media screen and (min-width: 68.95rem) {
+        @content
+    };
+}
+
+@mixin breakpoint3 { //896px
+    @media screen and (min-width: 56rem) {
+        @content
+    };
+}
+
+@mixin breakpoint4 { //992px
+    @media screen and (max-width: 64rem) {
+        @content
+    };
+}
+
+@mixin breakpoint5 { //848px
+    @media screen and (max-width: 53rem) {
+        @content
+    };
+}
+
+@mixin button($display: block, $boderRadius: 0px) {
+    display: $display;
+    border: none;
+    border-radius: $boderRadius;
+    color: map.get(vars.$colors, black-color);
+    text-align: center;
+    padding: 8px 15px 8px 15px;
+    font-weight: 600;
+	cursor: pointer;
+}
+
+@mixin avatar {
+    border-radius: 50px;
+}
