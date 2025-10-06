@@ -1,0 +1,222 @@
+@use '../libs/mixins';
+@use 'sass:map';
+
+.main__section {
+    @include mixins.grid();
+    text-align: center;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+    'banner'
+    'waybill'
+    'status'
+    'waybill-list'
+    'waybill-history'
+    'footer';
+}
+
+.main__section > div{
+    width: 90%;
+    min-height: 80vh;
+    background: map.get(mixins.$colors, bgMainDiv-color);
+    justify-self: center;
+    @include mixins.boxSizing();
+    box-shadow: 0px 5px 19px 4px rgba(235, 205, 205, 0.726);
+    border-radius: 30px;
+}
+
+.status {
+    grid-area: status;
+    padding: 30px 0;
+}
+.status table{
+    background: map.get(mixins.$colors, bgTable-color);
+    padding: 2px 2px;
+    border: 2px inset #7ab1d6dc;
+    height: 40px;
+    width: 60%;
+    text-align: center;
+    margin: auto;color: #023a4d;
+}
+.status table thead, caption{
+    height: 40px;
+    color: #023a4d;
+}
+.status caption{
+    color: #1beabd;
+}
+.status tbody{
+    background: linear-gradient(to left top,#07607e,#91c2d3);    
+    padding: 150px;
+}
+.status td{   
+    padding: 15px;
+}
+
+.waybill {
+    grid-area: waybill;
+    padding: 30px 0;
+    text-align: left;
+    justify-items: center;
+}
+
+.waybill__list {
+    grid-area: waybill-list;
+    @include mixins.grid();
+    margin-bottom: 50px;
+    table {
+        @include mixins.breakpoint2(){
+            background: linear-gradient(to left top,#052029,#91c2d3);
+            padding: 2px 2px;
+            border: 2px inset #7ab1d6dc;
+            
+            width: 80%;
+            text-align: center;
+            margin: auto;
+            height: 500px;
+            color: #023a4d;
+            overflow:auto;
+            display: inline-block;
+        }
+        @include mixins.breakpoint1(){
+            background: linear-gradient(to left top,#052029,#91c2d3);
+            padding: 2px 2px;
+            border: 2px inset #7ab1d6dc;
+            height: 40px;
+            text-align: center;
+            margin: auto;
+            width: 80%;
+            height: 500px;
+            color: #023a4d;
+            /* Set scroll by setting specific height/width */
+            overflow:auto;
+            display: inline-block;
+        }
+        thead, caption{
+            height: 40px;
+            color: #023a4d;
+        }
+        button {  
+            @include mixins.breakpoint2(){
+                position: relative;
+                padding: 4px 7px;
+                margin: 8px 2px;
+            }
+            @include mixins.breakpoint1(){
+                position: relative;
+                padding: 4px 7px;
+                font-size: 12px;
+                margin: 8px 2px; 
+            }
+        }
+    }
+    
+}
+
+.waybill__list h2{
+    color: #1beabd;padding: 10px;
+    text-align: left;
+}
+.waybill__list tbody{
+    background: linear-gradient(to left top,#07607e,#91c2d3);    
+    padding: 150px;
+}
+.waybill__list{
+    td {
+        padding: 5px;//font-size: 15px;
+        @include mixins.breakpoint3 {
+            padding: 20px;
+        }
+    }
+    tr {
+        padding: 35px;//font-size: 15px;
+    }
+    
+}
+.waybill__list div {  
+    display: inline-block;
+}
+.waybill__list fieldset {
+    text-align: left;
+    color: #318caf;
+    width: 50%;
+    border: none;
+    display: contents;
+}
+
+
+.waybill__history {
+    grid-area: waybill-history;
+    display: grid;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    table{
+            @include mixins.breakpoint2 {
+                background: linear-gradient(to left top,#052029,#91c2d3);
+                padding: 2px 2px;
+                border: 2px inset #7ab1d6dc;        
+                width: 80%;
+                text-align: justify;
+                margin: auto;
+                color: #023a4d;
+                overflow:auto;
+            }
+            @include mixins.breakpoint1 {
+                background: linear-gradient(to left top,#052029,#91c2d3);
+                padding: 2px 2px;
+                border: 2px inset #7ab1d6dc;
+                height: 40px;
+                text-align: justify;
+                margin: auto;
+                width: 80%;
+                color: #023a4d;
+                /* Set all table size for the columns */
+                display: inline-table;
+            }
+            thead, caption{
+                height: 40px;
+                color: #023a4d;
+            }
+            td {
+                @include mixins.breakpoint3 {
+                    padding: 10px;
+                }
+            }
+        }
+}
+
+.waybill__history table caption {
+    color: #158cb4;
+    text-align: justify;
+}
+.waybill__history tbody{
+    background: linear-gradient(to left top,#07607e,#91c2d3);    
+    padding: 50px;
+}
+
+.waybill__fixed__col{
+    width: 150px;
+}
+.banner {
+    width: 100%;
+    box-sizing: border-box;
+}
+.slides {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;    /* Get full image size but considering container size */
+    object-position: 80% 30%; /* Move img x-y position */
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.banner h1 {
+    position: absolute;
+    margin: 20px 30px;
+    color: rgb(7, 24, 73);
+    text-shadow: 2px 4px 2px rgba(73, 70, 70, 0.75);
+}
+.banner h2 {
+    position: absolute;
+    margin: 80px 30px;
+    text-shadow: 2px 4px 2px rgba(73, 70, 70, 0.75);
+}
+
