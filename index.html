@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./assets/CSS/main.css"> -->
+    <link rel="stylesheet" href="./assets/sass/main.css">
+    <script type="module" src="./js/script.js" defer></script>
+    <title>Hound Express</title>
+</head>
+<body>
+    <header> <!-- Header section -->   
+        <img src="./img/logo.png" alt="logo">
+        <span></span><span></span>
+        <p>MX +52(32)3324234</p>
+        <span></span>
+        <p>US +1(32)3324234</p><span></span>
+        <p>Idioma</p>
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Nosotros</a>
+                <li><a href="#">Servicios</a>
+                    <ul>
+                        <li><a href="#waybill">Registro de gui&#769;as</a></li>
+                        <li><a href="#status">Estado General</a></li>
+                        <li><a href="#waybillList">Lista de Gui&#769;as</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Blog</a>
+                <li><a href="#">Contacto</a>
+                <li><a href="#">Portal de cliente</a>
+               </ul>
+        </nav>
+    </header>
+    <main class="main__section">
+        <div>            
+            <div class="banner">
+                <h1>Hound Express</h1>
+                <h2>Para entregas rápidas, tu mejor aliado</h2>
+                <img class="slides" src="./img/plane.jpg">
+                <img class="slides" src="./img/andreas.jpg">
+                <img class="slides" src="./img/everest.jpg">
+              
+                <button class="button" id="slideMinus">&#10094;</button>
+                <button class="button" id="slidePlus">&#10095;</button>
+            </div>
+            <!-- Waybill insert section -->
+            <section id="waybill" class="waybill">
+                <form id="newGuide"> <!-- Form creation -->
+                    <fieldset> <!-- First organized section -->
+                        <legend><b>Informacio&#769;n del envi&#769;o</b></legend>
+                        <div>
+                            <label for="guideNr">Nu&#769;mero de gui&#769;a:</label>
+                            <span class="input">
+                                <input type="number" id="guideNr" name="guideNr" 
+                                placeholder="Nu&#769;mero de gui&#769;a"
+                                title="Nu&#769;mero de gui&#769;a">
+                            <div id="guideError" class="waybill__error__msg"></div>
+                            <span></span></span>
+                        </div>
+                        <div>
+                            <label for="source">Origen: </label>
+                            <span class="input">
+                                <input type="text" id="source" name="source" placeholder="Origen"
+                                title="Origen">
+                                <div id="sourceError" class="waybill__error__msg"></div>
+                            <span></span></span>
+                        </div>
+                        <div>
+                            <label for="destination">Destino: </label>
+                            <span class="input">
+                                <input type="text" id="destination" name="destination" placeholder="Destino"
+                                title="Destino">
+                                <div id="destError" class="waybill__error__msg"></div>
+                            <span></span></span>
+                        </div>
+                        <div>                        
+                            <label for="addressee">Destinatario: </label>
+                            <span class="input">
+                                <input type="text" id="addressee" name="addressee" placeholder="Destinatario"
+                                title="Destinatario">
+                                <div id="addresseeError" class="waybill__error__msg"></div>
+                            <span></span></span>
+                        </div>
+                        <div>
+                            <label for="creation-date">Fecha de creacio&#769;n: </label>
+                            <span class="input">
+                                <input type="date" id="creationDate" name="creationDate" placeholder="Fecha de creacio&#769;n"
+                                title="Fecha de creacio&#769;n">
+                                <div id="cDateError" class="waybill__error__msg"></div>
+                            <span></span></span>
+                        </div>
+                        <label>Estado del servicio</label>
+                        <select class="input" name="status" id="newStatus">
+                            <option value="0">-- Status Envi&#769;o --</option>
+                            <option value="1">Pendiente</option>
+                            <option value="2">En tra&#769;nsito</option>
+                            <option value="3">Entregado</option>
+                        </select>
+                        <div id="statusError" class="waybill__error__msg"></div>
+                    </fieldset>
+                    <button id="addRecord" class="button">Enviar</button>
+                </form>
+            </section>
+            <hr>
+            <!-- Waybill status section -->
+            <section id="status" class="status">
+                <table id="statusList">
+                    <caption><b>Estado general de gui&#769;as</caption>
+                        <thead> <!-- table header -->
+                            <tr>
+                                <th>Gui&#769;as activas</th>
+                                <th>Gui&#769;as en tra&#769;nsito</th>
+                                <th>Gui&#769;as entregadas</th>
+                            </tr>
+                        </thead>
+                        <tbody> <!-- table body -->
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                </table>
+            </section>
+            <!-- Waybill table section -->
+            <section id="waybillList" class="waybill__list">
+                <h2>Lista de gui&#769;as</h2>
+                <form> <!-- Form creation -->
+                    <fieldset> <!-- First organized section -->
+                        <div>
+                            <label for="totalGuideNr">Gui&#769;a:</label>
+                            <span class="input">
+                                <input type="number" id="totalGuideNr" name="totalGuideNr" 
+                                required placeholder="Nu&#769;mero de gui&#769;a"
+                            title="Nu&#769;mero de gui&#769;a">
+                            <span></span></span>
+                        </div>
+                        <button class="button" id="searchGuide">Buscar</button>
+                    </fieldset>
+                </form>                
+                <table id="guideList">
+                        <thead> <!-- table header -->
+                            <tr>
+                                <th>Nu&#769;mero de Gui&#769;a</th>
+                                <th>Origen</th>
+                                <th>Destino</th>
+                                <th>Destinatario</th>
+                                <th>Fecha de creacio&#769;n</th>
+                                <th>Estado Actual</th>
+                                <th>Actualizar estado</th>
+                            </tr>
+                        </thead>
+                        <tbody> <!-- table body -->
+                            <!-- <tr>
+                                <td><a href="./waybill-history.html">000001</a></td>
+                                <td class="text">Ciudad de Mexico</td>
+                                <td class="text">Cuautlancingo, Puebla</td>
+                                <td class="text">Jose Perez Perez</td>
+                                <td class="text">12/04/2025</td>
+                                <td><select class="input">
+                                    <option value="0">-- Status Envi&#769;o --</option>
+                                    <option value="1" selected>Pendiente</option>
+                                    <option value="2">En tra&#769;nsito</option>
+                                    <option value="3">Entregado</option>
+                                </select></td>
+                                <td><button class="button--disabled">Enviar</button></td>
+                            </tr>
+                            <tr>
+                                <td><a href="./waybill-history.html">000002</a></td>
+                                <td class="text">Monterrey</td>
+                                <td class="text">Villa Posadas, Puebla</td>
+                                <td class="text">Arturo Perez Ramirez</td>
+                                <td class="text">12/04/2025</td>
+                                <td><select class="input">
+                                    <option value="0">-- Status Envi&#769;o --</option>
+                                    <option value="1" selected>Pendiente</option>
+                                    <option value="2">En tra&#769;nsito</option>
+                                    <option value="3">Entregado</option>
+                                </select></td>
+                                <td><button class="button--disabled">Enviar</button></td>
+                            </tr>
+                            <tr>
+                                <td><a href="./waybill-history.html">000003</a></td>
+                                <td class="text">Guadalajara</td>
+                                <td class="text">Cholula, Puebla</td>
+                                <td class="text">Emilio Perez Perez</td>
+                                <td class="text">1/12/2024</td>
+                                <td><select class="input">
+                                    <option value="0">-- Status Envi&#769;o --</option>
+                                    <option value="1" selected>Pendiente</option>
+                                    <option value="2">En tra&#769;nsito</option>
+                                    <option value="3">Entregado</option>
+                                </select></td>
+                                <td><button class="button--disabled">Enviar</button></td>
+                            </tr> -->
+                        </tbody>
+                </table>
+            </section>            
+        </div>
+    </main>
+    <footer> <!-- Footer section -->
+        <section>
+        <article>
+            <ul class="menu__footer">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Informacion General</a>
+                    <ul>
+                        <li><a href="#waybill">Registro de gui&#769;as</a></li>
+                        <li><a href="#status">Estado General</a></li>
+                        <li><a href="#waybillList">Lista de Gui&#769;as</a></li>
+                    </ul>
+                </li>
+            </ul>            
+        </article>
+        <article>
+            <img src="./img/logo.png" alt="logo">
+        </article>
+    </section>
+    </footer>
+</body>
+</html>
