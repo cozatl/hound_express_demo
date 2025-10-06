@@ -66,8 +66,8 @@ if (guideTable) {
     }
     searchButton.addEventListener('click', (e) => {
         // Prevent the default form submission
-        e.preventDefault();
-        guideItem.saveGuideList(guideTable);
+        // e.preventDefault();
+        // guideItem.saveGuideList(guideTable);
     });
 
     
@@ -128,11 +128,14 @@ if (guideTable) {
 
             // Get form data
             const formData = new FormData(form);            
-            guideItem.createItem(formData);
-            tdStatus = guideTable.querySelectorAll("tr td:nth-child(6)"); //Select the field required based on the position
-            counter = guideItem.tdFieldUpdateAll(tdStatus, counter);
-            guideItem.updateStatusTable(tableCounter, counter);
-            guideItem.saveHistRecords(undefined, formData);            
+            const error = guideItem.createItem(formData);
+            if(!error) {
+                tdStatus = guideTable.querySelectorAll("tr td:nth-child(6)"); //Select the field required based on the position
+                counter = guideItem.tdFieldUpdateAll(tdStatus, counter);
+                guideItem.updateStatusTable(tableCounter, counter);
+            
+                guideItem.saveHistRecords(undefined, formData);
+            };       
             
             tableButtons = guideTable.querySelectorAll("button");         //Select buttons required from guide table
             tableSelects = guideTable.querySelectorAll("select");         //Select buttons required from guide table
