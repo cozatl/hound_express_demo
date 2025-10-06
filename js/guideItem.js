@@ -216,7 +216,7 @@ export default class GuideItem {
             errorFound = true;
         };
         if (errorFound) {
-            return;
+            return errorFound;
         };
 
         const guideTemplate = this.newElements(guideItems, false, statusElem);
@@ -227,6 +227,7 @@ export default class GuideItem {
         
         this.saveGuideList(guideTable);
         this.loadGuideList(guideTable);
+        return errorFound;
     };
 
     updateStatusTable (tableCounter, counter) {
