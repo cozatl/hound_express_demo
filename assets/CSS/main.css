@@ -196,7 +196,7 @@ a:link {
   color: #5a7086;
 }
 
-button {
+.button {
   position: relative;
   padding: 8px 15px;
   font: 15px "Orbitron";
@@ -209,7 +209,7 @@ button {
   border-radius: 15px;
   box-shadow: inset 0 1px 10px 0 rgb(49, 65, 90), inset 0 -3px 0 0 rgb(98, 197, 254), inset 0 20px 0 0 rgba(6, 8, 15, 0.4), inset 0 20px 5px 0 rgb(65, 69, 107), 0 0 0 1px #021d33, 0 5px 0 0 #444, 0 0 20px 0 rgba(98, 236, 254, 0.4), 0 40px 20px -30px rgba(98, 254, 254, 0.2);
 }
-button:before { /* Main shadow */
+.button:before { /* Main shadow */
   content: "";
   position: absolute;
   z-index: -2;
@@ -221,7 +221,7 @@ button:before { /* Main shadow */
   border-radius: 100px;
   box-shadow: 0 2px 5px #000, inset 0 10px 0 #056a83;
 }
-button:after { /* Line shadow */
+.button:after { /* Line shadow */
   content: "";
   position: absolute;
   z-index: -1;
@@ -233,14 +233,14 @@ button:after { /* Line shadow */
   top: 50%;
   transform: translateY(-50%);
 }
-button:hover {
+.button:hover {
   cursor: pointer;
   background-image: radial-gradient(100% 75% at 50% 100%, #40e2f7 0%, #0041a2 100%);
   color: #f9e3bf;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
   box-shadow: inset 0 1px 10px 0 rgb(119, 155, 212);
 }
-button:focus, button:active {
+.button:focus, .button:active {
   outline: none;
   color: #bff9f4;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
@@ -248,9 +248,45 @@ button:focus, button:active {
   box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.4), inset 0 0 10px rgb(0, 42, 133), inset 0 3px 15px 0 rgb(0, 96, 174), inset 0 40px 0 0 rgba(98, 210, 254, 0.3), inset 0 20px 20px 0 rgba(69, 236, 248, 0.75), 0 0 0 2px #000, 0 4px 0 0 #444; /* Button shadow when it is active */
 }
 
+/* Added modifier for Products */
+.button--disabled {
+  position: relative;
+  padding: 8px 15px;
+  font-family: "Orbitron", "Montserrat", Helvetica, sans-serif;
+  text-transform: uppercase;
+  margin: 15px 20px;
+  background-image: radial-gradient(100% 75% at 50% 100%, #307375 0%, #0c6081 100%);
+  border: none;
+  border-radius: 15px;
+  color: rgb(68, 68, 68);
+}
+.button--disabled:before { /* Main shadow */
+  content: "";
+  position: absolute;
+  z-index: -2;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(#056a83, #056a83);
+  border-radius: 100px;
+}
+.button--disabled:hover {
+  cursor: default;
+}
+
 .waybill form {
   width: 60%;
   color: rgb(189, 186, 186);
+}
+.waybill form .waybill__error__msg {
+  color: red;
+  background-color: rgb(218, 105, 0);
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+.waybill form .invalid {
+  border: 1px solid red;
 }
 
 .waybill fieldset {
@@ -403,7 +439,7 @@ header > img {
   display: block;
 }
 
-.main-section {
+.main__section {
   display: grid;
   align-items: center;
   text-align: center;
@@ -411,7 +447,7 @@ header > img {
   grid-template-areas: "banner" "waybill" "status" "waybill-list" "waybill-history" "footer";
 }
 
-.main-section > div {
+.main__section > div {
   width: 90%;
   min-height: 80vh;
   background: linear-gradient(rgba(61, 69, 85, 0.938), rgba(31, 30, 44, 0.938), rgba(78, 72, 139, 0.938));
@@ -421,7 +457,7 @@ header > img {
   border-radius: 30px;
 }
 
-status {
+.status {
   grid-area: status;
   padding: 30px 0;
 }
@@ -462,14 +498,14 @@ status {
   justify-items: center;
 }
 
-.waybill-list {
+.waybill__list {
   grid-area: waybill-list;
   display: grid;
   align-items: center;
   margin-bottom: 50px;
 }
 @media screen and (min-width: 68.95rem) {
-  .waybill-list table {
+  .waybill__list table {
     background: linear-gradient(to left top, #052029, #91c2d3);
     padding: 2px 2px;
     border: 2px inset rgba(122, 177, 214, 0.862745098);
@@ -483,7 +519,7 @@ status {
   }
 }
 @media screen and (max-width: 69rem) {
-  .waybill-list table {
+  .waybill__list table {
     background: linear-gradient(to left top, #052029, #91c2d3);
     padding: 2px 2px;
     border: 2px inset rgba(122, 177, 214, 0.862745098);
@@ -498,19 +534,19 @@ status {
     display: inline-block;
   }
 }
-.waybill-list table thead, .waybill-list table caption {
+.waybill__list table thead, .waybill__list table caption {
   height: 40px;
   color: #023a4d;
 }
 @media screen and (min-width: 68.95rem) {
-  .waybill-list table button {
+  .waybill__list table button {
     position: relative;
     padding: 4px 7px;
     margin: 8px 2px;
   }
 }
 @media screen and (max-width: 69rem) {
-  .waybill-list table button {
+  .waybill__list table button {
     position: relative;
     padding: 4px 7px;
     font-size: 12px;
@@ -518,31 +554,34 @@ status {
   }
 }
 
-.waybill-list h2 {
+.waybill__list h2 {
   color: #1beabd;
   padding: 10px;
   text-align: left;
 }
 
-.waybill-list tbody {
+.waybill__list tbody {
   background: linear-gradient(to left top, #07607e, #91c2d3);
   padding: 150px;
 }
 
-.waybill-list td {
+.waybill__list td {
   padding: 5px;
 }
 @media screen and (min-width: 56rem) {
-  .waybill-list td {
-    padding: 10px;
+  .waybill__list td {
+    padding: 20px;
   }
 }
+.waybill__list tr {
+  padding: 35px;
+}
 
-.waybill-list div {
+.waybill__list div {
   display: inline-block;
 }
 
-.waybill-list fieldset {
+.waybill__list fieldset {
   text-align: left;
   color: #318caf;
   width: 50%;
@@ -550,14 +589,14 @@ status {
   display: contents;
 }
 
-.waybill-history {
+.waybill__history {
   grid-area: waybill-history;
   display: grid;
   margin-bottom: 50px;
   margin-top: 10px;
 }
 @media screen and (min-width: 68.95rem) {
-  .waybill-history table {
+  .waybill__history table {
     background: linear-gradient(to left top, #052029, #91c2d3);
     padding: 2px 2px;
     border: 2px inset rgba(122, 177, 214, 0.862745098);
@@ -569,7 +608,7 @@ status {
   }
 }
 @media screen and (max-width: 69rem) {
-  .waybill-history table {
+  .waybill__history table {
     background: linear-gradient(to left top, #052029, #91c2d3);
     padding: 2px 2px;
     border: 2px inset rgba(122, 177, 214, 0.862745098);
@@ -582,27 +621,27 @@ status {
     display: inline-table;
   }
 }
-.waybill-history table thead, .waybill-history table caption {
+.waybill__history table thead, .waybill__history table caption {
   height: 40px;
   color: #023a4d;
 }
 @media screen and (min-width: 56rem) {
-  .waybill-history table td {
+  .waybill__history table td {
     padding: 10px;
   }
 }
 
-.waybill-history table caption {
+.waybill__history table caption {
   color: #158cb4;
   text-align: justify;
 }
 
-.waybill-history tbody {
+.waybill__history tbody {
   background: linear-gradient(to left top, #07607e, #91c2d3);
   padding: 50px;
 }
 
-.fixed-col {
+.waybill__fixed__col {
   width: 150px;
 }
 
@@ -659,10 +698,10 @@ footer article {
   text-align: end;
 }
 
-.menu-footer {
+.menu__footer {
   text-align: start;
 }
-.menu-footer ul {
+.menu__footer ul {
   display: block;
   list-style-type: disc;
   margin-block-start: 1em;
@@ -670,7 +709,7 @@ footer article {
   padding-inline-start: 40px;
   unicode-bidi: isolate;
 }
-.menu-footer li::marker {
+.menu__footer li::marker {
   color: rgb(231, 31, 31);
   font-size: 1.5em;
   text-align: start;
