@@ -177,7 +177,7 @@ export default class GuideItem {
         cDateError.textContent = '';
         const statusError = document.getElementById('statusError');
         statusError.textContent = '';
-        tdGuideNr.forEach(cell => {console.log(guideItems.status);
+        tdGuideNr.forEach(cell => {
             if (cell.textContent === guideItems.guideNr) {
                 guideError.textContent = 'Guide is already inserted.';
                 guideNrElem.classList.add('invalid');
