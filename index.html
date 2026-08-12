@@ -10,44 +10,44 @@
 </head>
 <body>
     <header> <!-- Header section -->   
-        <img src="./img/logo.png" alt="logo">
+        <img src="./img/logo.png" alt="imagen de logo">
         <span></span><span></span>
-        <p>MX +52(32)3324234</p>
+        <p aria-label="Numero de telefono Mexico">MX +52(32)3324234</p>
         <span></span>
-        <p>US +1(32)3324234</p><span></span>
-        <p>Idioma</p>
-        <nav id="menu">
+        <p aria-label="Numero de telefono EEUU">US +1(32)3324234</p><span></span>
+        <p aria-label="Cambiar el idioma">Idioma</p>
+        <nav id="menu" role="navigation">
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="#">Nosotros</a>
-                <li><a href="#">Servicios</a>
+                <li><a href="index.html" aria-label="Ir al inicio">Inicio</a></li>
+                <li><a href="#" aria-label="ir a conocemos mas">Nosotros</a>
+                <li><a href="#" aria-label="Ir a servicios">Servicios</a>
                     <ul>
-                        <li><a href="#waybill">Registro de gui&#769;as</a></li>
-                        <li><a href="#status">Estado General</a></li>
-                        <li><a href="#waybillList">Lista de Gui&#769;as</a></li>
+                        <li><a href="#waybill" aria-label="Ir al registro de guias">Registro de gui&#769;as</a></li>
+                        <li><a href="#status" aria-label="Ir al estado general de guias">Estado General</a></li>
+                        <li><a href="#waybillList" aria-label="Ir a la lista de guias">Lista de Gui&#769;as</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Blog</a>
-                <li><a href="#">Contacto</a>
-                <li><a href="#">Portal de cliente</a>
+                <li><a href="#" aria-label="Ir al blog">Blog</a>
+                <li><a href="#" aria-label="Ir al contacto">Contacto</a>
+                <li><a href="#" aria-label="Ir al portal del cliente">Portal de cliente</a>
                </ul>
         </nav>
     </header>
     <main class="main__section">
-        <div>            
-            <div class="banner">
-                <h1>Hound Express</h1>
+        <div>
+            <div class="banner" role="banner">
+                <h1 lang="en">Hound Express</h1>
                 <h2>Para entregas rápidas, tu mejor aliado</h2>
-                <img class="slides" src="./img/plane.jpg">
-                <img class="slides" src="./img/andreas.jpg">
-                <img class="slides" src="./img/everest.jpg">
+                <img class="slides" src="./img/plane.jpg" alt="diapositiva 1 de encabezado">
+                <img class="slides" src="./img/andreas.jpg" alt="diapositiva 2 de encabezado">
+                <img class="slides" src="./img/everest.jpg" alt="diapositiva 3 de encabezado">
               
                 <button class="button" id="slideMinus">&#10094;</button>
                 <button class="button" id="slidePlus">&#10095;</button>
             </div>
             <!-- Waybill insert section -->
-            <section id="waybill" class="waybill">
-                <form id="newGuide"> <!-- Form creation -->
+            <section id="waybill" class="waybill" aria-labelledby="newGuide">
+                <form id="newGuide" aria-label="Inserta nueva guia al sistema"> <!-- Form creation -->
                     <fieldset> <!-- First organized section -->
                         <legend><b>Informacio&#769;n del envi&#769;o</b></legend>
                         <div>
@@ -204,18 +204,18 @@
         <section>
         <article>
             <ul class="menu__footer">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="#">Informacion General</a>
+                <li><a href="index.html" aria-label="Ir al inicio">Inicio</a></li>
+                <li><a href="#" aria-label="ir a informacion general">Informacion General</a>
                     <ul>
-                        <li><a href="#waybill">Registro de gui&#769;as</a></li>
-                        <li><a href="#status">Estado General</a></li>
-                        <li><a href="#waybillList">Lista de Gui&#769;as</a></li>
+                        <li><a href="#waybill" aria-label="Ir al registro de guias">Registro de gui&#769;as</a></li>
+                        <li><a href="#status" aria-label="Ir al estado general de guias">Estado General</a></li>
+                        <li><a href="#waybillList" aria-label="Ir a la lista de guias>Lista de Gui&#769;as</a></li>
                     </ul>
                 </li>
             </ul>            
         </article>
         <article>
-            <img src="./img/logo.png" alt="logo">
+            <img src="./img/logo.png" alt="imagen de logo">
         </article>
     </section>
     </footer>
