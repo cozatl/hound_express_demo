@@ -114,7 +114,7 @@ h6 {
 }
 
 a {
-  color: #107979;
+  color: #0b4d4d;
   transition: color 0.8s, text-shadow 1.2s;
 }
 
@@ -124,11 +124,11 @@ a:hover { /* links section */
 }
 
 a:link {
-  color: #004d50;
+  color: #179d9d;
 }
 
 :visited {
-  color: #0e4170;
+  color: #62a9eb;
 }
 
 .input {
