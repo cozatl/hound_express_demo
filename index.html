@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Con Hound Express, disfruta de los mejores envios con eficiencia y al mejor precio"> <!-- Menos de 160 caracteres -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="keywords" content="envios, paqueteria, paquetes, transporte">
+
+    <!-- Open Graph (used for social networks) -->
+    <meta property="og:title" content="Hound Express Demo">
+    <meta property="og:description" content="Con Hound Express, disfruta de los mejores envios con eficiencia y al mejor precio">
     <link rel="stylesheet" href="./assets/CSS/main.css">
     <!-- <link rel="stylesheet" href="./assets/sass/main.css"> -->
     <script type="module" src="./js/script.js" defer></script>
-    <title>Hound Express</title>
+    <title>Hound Express Demo</title>
 </head>
 <body>
     <header> <!-- Header section -->   
@@ -19,17 +26,17 @@
         <nav id="menu" role="navigation">
             <ul>
                 <li><a href="index.html" aria-label="Ir al inicio">Inicio</a></li>
-                <li><a href="#" aria-label="ir a conocemos mas">Nosotros</a>
-                <li><a href="#" aria-label="Ir a servicios">Servicios</a>
+                <li><a href="#" aria-label="ir a conocemos mas">Nosotros</a></li>
+                <li><a href="#" aria-label="Ir a servicios">Servicios</a></li>
                     <ul>
                         <li><a href="#waybill" aria-label="Ir al registro de guias">Registro de gui&#769;as</a></li>
                         <li><a href="#status" aria-label="Ir al estado general de guias">Estado General</a></li>
                         <li><a href="#waybillList" aria-label="Ir a la lista de guias">Lista de Gui&#769;as</a></li>
                     </ul>
                 </li>
-                <li><a href="#" aria-label="Ir al blog">Blog</a>
-                <li><a href="#" aria-label="Ir al contacto">Contacto</a>
-                <li><a href="#" aria-label="Ir al portal del cliente">Portal de cliente</a>
+                <li><a href="#" aria-label="Ir al blog">Blog</a></li>
+                <li><a href="#" aria-label="Ir al contacto">Contacto</a></li>
+                <li><a href="#" aria-label="Ir al portal del cliente">Portal de cliente</a></li>
                </ul>
         </nav>
     </header>
@@ -100,7 +107,7 @@
                         </select>
                         <div id="statusError" class="waybill__error__msg"></div>
                     </fieldset>
-                    <button id="addRecord" class="button">Enviar</button>
+                    <button id="addRecord" class="button" aria-label="Boton para enviar formulario">Enviar</button>
                 </form>
             </section>
             <hr>
@@ -129,6 +136,7 @@
                 <h2>Lista de gui&#769;as</h2>
                 <form> <!-- Form creation -->
                     <fieldset> <!-- First organized section -->
+                        <legend>Total de guias en proceso</legend>
                         <div>
                             <label for="totalGuideNr">Gui&#769;a:</label>
                             <span class="input">
@@ -205,11 +213,11 @@
         <article>
             <ul class="menu__footer">
                 <li><a href="index.html" aria-label="Ir al inicio">Inicio</a></li>
-                <li><a href="#" aria-label="ir a informacion general">Informacion General</a>
+                <li><a href="#" aria-label="ir a informacion general">Informacion General</a></li>
                     <ul>
                         <li><a href="#waybill" aria-label="Ir al registro de guias">Registro de gui&#769;as</a></li>
                         <li><a href="#status" aria-label="Ir al estado general de guias">Estado General</a></li>
-                        <li><a href="#waybillList" aria-label="Ir a la lista de guias>Lista de Gui&#769;as</a></li>
+                        <li><a href="#waybillList" aria-label="Ir a la lista de guias">Lista de Gui&#769;as</a></li>
                     </ul>
                 </li>
             </ul>            

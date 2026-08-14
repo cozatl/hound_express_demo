@@ -128,7 +128,7 @@ a:link {
 }
 
 :visited {
-  color: #62a9eb;
+  color: #89abce;
 }
 
 .input {
@@ -280,7 +280,7 @@ a:link {
   color: rgb(189, 186, 186);
 }
 .waybill form .waybill__error__msg {
-  color: red;
+  color: #2a0303;
   background-color: rgb(218, 105, 0);
   font-size: 0.9em;
   margin-top: 5px;
@@ -561,7 +561,8 @@ header > img {
 }
 
 .waybill__list tbody {
-  background: linear-gradient(to left top, #07607e, #91c2d3);
+  background: linear-gradient(to left top, #3386a1, #044053);
+  color: #47a8c5;
   padding: 150px;
 }
 
